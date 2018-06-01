@@ -10,7 +10,6 @@ module.exports = function(options) {
 
 	var settings = {
 		app: undefined,
-		promise: Promise,
 		isPromise: obj => obj && obj.then,
 		isResolvable: obj =>
 			obj
@@ -27,7 +26,7 @@ module.exports = function(options) {
 		resolve: (req, res, data) => res.send(_.isNumber(data) ? '' + data : data),
 		resolveEmpty: (req, res, data) => res.sendStatus(200),
 		error: (req, res, data) => res.sendStatus(400).send(data),
-		wrapFunctions: ['get'],
+		wrapFunctions: ['delete', 'get', 'post', 'put'],
 		...options,
 	};
 
