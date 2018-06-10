@@ -1,5 +1,5 @@
-Express-As-Promised
-===================
+Express-Middleware-Promise
+==========================
 A simple wrapper around Express to make it promise compatible.
 
 * **Completely Promise library agnostic** - Use native promises, Q, Bluebird or whatever library you want
@@ -10,10 +10,10 @@ A simple wrapper around Express to make it promise compatible.
 
 ```javascript
 var express = require('express');
-var expressAsPromised = require('..');
+var expressPromises = require('@momsfriendlydevco/express-middleware-promise');
 
 var app = express();
-expressAsPromised(app);
+expressPromises(app);
 
 
 // Any simple return value gets sent via res.send() automatically

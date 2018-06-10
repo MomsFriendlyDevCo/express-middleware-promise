@@ -1,7 +1,7 @@
 var bodyParser = require('body-parser');
 var expect = require('chai').expect;
 var express = require('express');
-var expressAsPromised = require('..');
+var expressPromises = require('..');
 var expressLogger = require('express-log-url');
 var mlog = require('mocha-logger');
 var superagent = require('superagent');
@@ -17,7 +17,7 @@ before('Setup server', done => {
 	app.use(bodyParser.json());
 	app.set('log.indent', '      ');
 
-	expressAsPromised(app);
+	expressPromises(app);
 
 	// Callbacks {{{
 	app.get('/callbacks/string', (req, res) => res.send('Hello'));
